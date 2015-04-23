@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ithome首页</title>
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+ <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+</head>
+<body>
+    <header>
+        <div class="left"></div>
+        <div class="zhong">
+            <div class="box"></div>
+        </div>
+        <div class="right"></div>
+    </header>
+    <nav>
+    	<ul>
+    		<a href="#"><li class="pdl">最新</li></a>
+    		<a href="#"><li>排行榜</li></a>
+    		<a href="#"><li>苹果</li></a>
+    		<a href="#"><li>手机</li></a>
+    		<a href="#"><li>数码</li></a>
+    	</ul>
+    	<span></span>
+    </nav>
+    <div id="huadonglunbo" class="swipe">
+		<div class='swipe-wrap'>
+			<div><img src="images/0.jpg" /></div>
+			<div><img src="images/1.jpg" /></div>
+			<div><img src="images/2.jpg" /></div>
+			<div><img src="images/3.jpg" /></div>
+			<div><img src="images/4.jpg" /></div>
+		</div>
+		<div class="xiaoyuandian">
+			<ul>
+				<li class="cur"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<section>
+             <!--开始-->
+		<div class="xinwen">
+			<div class="left"><img src="images/huohu.jpeg"/></div>
+			<div class="right">
+				<div>Firefox火狐浏览器最新版本37.0.0.5563发布</div>
+				<div>
+					<span>一分钟前</span>
+					<span>人气：0</span>
+					<span>评论：0</span>
+				</div>
+			</div>
+		</div> <!--结束-->
+		     <!--开始-->
+		<div class="xinwen">
+			<div class="left"><img src="images/huohu.jpeg"/></div>
+			<div class="right">
+				<div>Firefox火狐浏览器最新版本37.0.0.5563发布</div>
+				<div>
+					<span>一分钟前</span>
+					<span>人气：0</span>
+					<span>评论：0</span>
+				</div>
+			</div>
+		</div> <!--结束-->
+		     <!--开始-->
+		<div class="xinwen">
+			<div class="left"><img src="images/huohu.jpeg"/></div>
+			<div class="right">
+				<div>Firefox火狐浏览器最新版本37.0.0.5563发布</div>
+				<div>
+					<span>一分钟前</span>
+					<span>人气：0</span>
+					<span>评论：0</span>
+				</div>
+			</div>
+		</div> <!--结束-->
+		     <!--开始-->
+		<div class="xinwen">
+			<div class="left"><img src="images/huohu.jpeg"/></div>
+			<div class="right">
+				<div>Firefox火狐浏览器最新版本37.0.0.5563发布</div>
+				<div>
+					<span>一分钟前</span>
+					<span>人气：0</span>
+					<span>评论：0</span>
+				</div>
+			</div>
+		</div> <!--结束-->
+	</section>
+	<script type="text/javascript" src="js/swipe2.js"></script>
+	<script type="text/javascript">
+		var haha = document.getElementById('huadonglunbo');
+		window.mySwipe = Swipe(
+			haha, 
+			{	
+				startSlide: 0,		//表示轮播开始的图片编号
+				auto: 2000,         //表示自动轮播的间隔
+				continuous: true,   //表示是否再来一轮
+				disableScroll: true,  //表示是否在上面阻止默认的滚轮事件，不用改
+				stopPropagation: true,   //表示是否阻止冒泡，不用改。
+				callback: function(index, element) {
+					//写小圆点的业务
+					$(".xiaoyuandian ul li").eq(index).addClass("cur").siblings().removeClass("cur");
+				}
+			}
+		);
+
+
+		$(".xiaoyuandian ul li").click(
+			function(){
+				mySwipe.slide($(this).index(),1000);
+			}
+		);
+	</script>
+</body>
+</html>

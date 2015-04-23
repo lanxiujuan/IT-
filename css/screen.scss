@@ -1,0 +1,72 @@
+@import "../sass/peizhi";
+@import "../sass/b";
+@include reset;
+body{color: red;}
+    header{$h:47px;
+        width: $w;height: $h;background: $bgc;@include por;
+        @mixin dinwei{width: 25px;height: $h;
+        top:0px;margin:5px 15px;@include poa;}
+    .left{
+        @include dinwei;left: 0px;background: url(../images/icon.png) no-repeat 2px 11px;
+    }
+    .zhong{
+        width:$w;height: $h;@include box; @include por;
+        & .box{
+           height: $h; width: 55px;@include poa;left:50%;top: 0px;-webkit-transform:translateX(-50%);
+           background: url(../images/logo.png)no-repeat 0px 15px;background-size:50px 22px ;
+        }
+    }
+    .right{  @include dinwei;right: 0px;background: url(../images/icon2.png) no-repeat 0px 12px;
+        background-size:17px 16px ;width: 40px   ;
+     }
+    }
+    nav{$h:40px;
+        width: $w;height: $h;background:rgba(250, 250, 250,0.9);@include por;
+        & ul{height: $h;
+        & a{@include fl;width: 20%;height: $h;
+             li{width: 100%;height: $h;@include fl;@include box;line-height: $h;@include font;font-size: 12px;
+             &.pdl{padding-left: 15px;color: red;font-size: 14px;}
+             }
+             @include a-l(#2C2C2B,#00B4DF,none,none);
+        }
+        }
+        span{width: 30px;height: $h;background: url(../images/icon.png) no-repeat -129px 8px;@include poa;
+        right: 10px;top: 0px;background-size:148px 29px ;}
+        }
+       
+        .swipe{$x:10px;
+            overflow: hidden;visibility: hidden;@include por;width: $w;
+            & img{width: $w; }
+            & .swipe-wrap{overflow: hidden;@include por;
+                & > div{@include por;width: $w;@include fl;}
+            }
+            & .xiaoyuandian{height: 15px;
+            @include poa;bottom: 0px;right: $x;
+            & ul{
+                & li{$w:8px;
+                    @include fl;width: $w;height: $w;background:RGB(206,206,204);
+            margin-right: $x;border-radius:4px;
+            &.cur{background:red;}
+                }
+            } 
+            }
+        } 
+         section{$h:95px;
+             width: $w;height: $h;
+             .xinwen{width: $w;height: $h;@include box; padding: 10px 0px 10px 15px;
+//            border-top: 1px solid gainsboro;
+              border-bottom: 1px solid gainsboro;
+                 .left{width: 25%;@include fl;height: $h;@include box; padding-left: 15px;
+                 img{height: 75px;}
+                 
+                 }
+                 .right{$wr:75%;@include fl;width: $wr;height: $h;@include box;padding-right: 15px;
+                 & div:nth-child(1){width: $w;height:50px;}
+                 & div:nth-child(2){width: $w;height: 25px;line-height: 25px;color: gray;@include f-s(12px);
+                 & span:nth-child(1){width: 40%;@include fl();text-align: left;}
+                 & span:nth-child(2),& span:nth-child(3){width: 30%;@include fl();text-align: right;}
+                 }
+                 }
+             }
+         }
+        
